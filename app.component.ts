@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Empleado } from './empleado.model';
+import { ServicioEmpleadosService } from './servicio-empleados.service';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,10 @@ export class AppComponent {
   cuadroSalario: number=0;
   agregarEmpleado(){
     let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
+    this.miServicio.muestraMensaje("Nombre empleado: "+miEmpleado.nombre);
     this.empleados.push(miEmpleado);
+  }
+  constructor(private miServicio:ServicioEmpleadosService){
+
   }
 }
