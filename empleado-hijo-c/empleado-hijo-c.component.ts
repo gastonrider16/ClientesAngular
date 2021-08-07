@@ -13,5 +13,16 @@ export class EmpleadoHijoCComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  empleados:Empleado[]=[
+    new Empleado("A","B","Programador",600000),
+    new Empleado("C","D","Programador",40000)
+  ];
+  empleadoAgregado(empleado:Empleado){
+    this.empleados.push(empleado);
+  }
+  //PASO 4
+  arrayCaracteristicas = [''];
+  agregarCaracteristica(nuevaCaracteristica:string){
+    this.arrayCaracteristicas.push(nuevaCaracteristica);
+  }
 }
